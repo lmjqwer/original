@@ -1,0 +1,20 @@
+[submodule "ext/actions/private/libmedia"]
+	path = ext/actions/private/libmedia
+	url = ssh://192.168.4.4:29418/ZH/actions/ZSDK_LIB_MEDIA
+	branch = ZSDK_LIB_MEDIA_FOR_ZS285A_DEV_1.9_BF2
+[submodule "ext/actions/private/libota"]
+	path = ext/actions/private/libota
+	url = ssh://192.168.4.4:29418/ZH/actions/ZSDK_LIB_OTA
+	branch = ZSDK_LIB_OTA_FOR_ZS285A_DEV_1.9_BF2
+[submodule "ext/actions/private/libnetwork"]
+	path = ext/actions/private/libnetwork
+	url = ssh://192.168.4.4:29418/ZH/actions/ZSDK_LIB_NETWORK
+	branch = ZSDK_LIB_NETWORK_FOR_ZS285A_DEV_1.9
+[submodule "ext/actions/private/libbt_stack"]
+	path = ext/actions/private/libbt_stack
+	url = ssh://192.168.4.4:29418/ZH/actions/ZSDK_LIB_BTSTACK
+	branch = ZSDK_LIB_BTSTACK_FOR_ZS285A_DEV_1.9_BF2
+[submodule "ext/actions/private/libbt_service"]
+	path = ext/actions/private/libbt_service
+	url = ssh://192.168.4.4:29418/ZH/actions/ZSDK_LIB_BTSERVICE
+	branch = ZSDK_LIB_BTSERVICE_FOR_ZS285A_DEV_1.9_BF2

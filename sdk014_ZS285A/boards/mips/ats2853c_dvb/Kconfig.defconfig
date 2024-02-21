@@ -1,0 +1,7 @@
+
+if BOARD_ATS2853c_DVB
+
+config BOARD
+	default ats2853c_dvb
+
+endif

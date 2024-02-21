@@ -1,0 +1,233 @@
+# Kconfig - ACTIONS primitive options for sdk version 2.0
+
+#
+# Copyright (c) 2015 Intel Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+menuconfig BLUETOOTH
+	bool
+	prompt "BlueTooth"
+	depends on ACTIONS_COMPONENT_FUNCTION
+	default n
+	select BT_MANAGER
+	help
+	This option enables actions bluetooth funcion.
+
+config BT_MANAGER
+    bool
+    prompt "Bt Manager Support"
+	depends on BLUETOOTH
+	select BT_SERVICE
+	select BT_STACK
+	select BLUETOOTH_PORTING
+	select ACTS_TRANSCODE
+    default n
+    help
+    This option enables bt manager.
+
+config BT_DOUBLE_PHONE
+    bool
+    prompt "Bt double phone Support"
+	depends on BT_MANAGER
+    default n
+    help
+    This option enables Bt double phone manager.
+
+config BT_DOUBLE_PHONE_EXT_MODE
+    bool
+    prompt "Bt double phone ext mode Support"
+	depends on BT_DOUBLE_PHONE
+    default n
+    help
+    This option enables Bt double phone ext mode Support.
+
+config BT_DOUBLE_PHONE_PREEMPTION_MODE
+    bool
+    prompt "Bt double phone preemption mode Support"
+	depends on BT_DOUBLE_PHONE
+    default n
+    help
+    This option enables Bt double phone preemption mode Support.
+
+
+
+config BT_BLE
+    bool
+    prompt "Bt Ble Support"
+	depends on BT_MANAGER
+	depends on BT_LE_ATT
+    default n
+    help
+    This option enables bt manager.
+
+
+config BT_AVRCP_GET_ID3
+    bool
+    prompt "Bt avrcp get ID3 Support"
+	depends on BT_MANAGER
+    default n
+    help
+    This option enables Bt avrcp get ID3 .
+
+
+config BT_A2DP_AAC
+    bool
+    prompt "Bt a2dp aac Support"
+	depends on BT_MANAGER
+    default n
+    help
+    This option enables bt a2dp aac .
+
+config BT_A2DP_MAX_BITPOOL
+    int
+    prompt "Bt a2dp bit pool config"
+	depends on BT_A2DP
+    default 53
+    help
+    This option enables bt a2dp bit pool .
+
+config WAIT_L2CAP_CONNECT_CONFRIM
+    bool
+    prompt "For samsung TV, A2DP connect wait user confirm"
+    default n
+    help
+    This option enables A2DP connect wait user confirm, just for samsung TV.
+
+config BT_DEV_NAME
+    string
+    prompt "bt device name"
+    depends on BT_MANAGER
+    help
+    This option specifies bt device classic name
+
+config TWS
+    bool
+    prompt "bt manager Support tws"
+	depends on BT_MANAGER
+    default n
+    help
+    This option enables bt tws.
+
+config TWS_MONO_MODE
+    bool
+    prompt "bt manager Support tws mono mode"
+	depends on TWS
+    default n
+    help
+    This option enables bt tws mono mode.
+
+config TWS_BACKGROUND_BT
+    bool
+    prompt "bt manager Support local tws support background bt"
+	depends on TWS
+    default n
+    help
+    This option enables local tws support background bt.
+
+config BT_HFP_TWS
+    bool
+    prompt "bt manager Support hfp tws"
+	depends on TWS
+    default n
+    help
+    This option enables bt hfp tws.
+    
+config CSB
+    bool
+    prompt "bt manager Support csb"
+	depends on BT_MANAGER
+    default n
+    help
+    This option enables bt csb.
+
+config MGR_TEST_SAMPLE
+    bool
+    prompt "bt manager test sample"
+	depends on BT_MANAGER
+    default n
+    help
+    This option enables bt manager test sample.
+
+config USER_SYNC_VOL_LEVEL
+    bool
+    prompt "bt manager Support bt vol sync"
+	depends on BT_MANAGER
+    default n
+    help
+    This option enables bt vol sync.
+
+config USER_BT_BACKPLAY_DEBUG
+    bool
+    prompt "bt manager Support BT Backplay Problem"
+	depends on BT_MANAGER
+    default n
+    help
+    This option enables BT Backplay Problem.
+
+config USER_DELETE_BACKPLAY_BT_TTS
+    bool
+    prompt "bt manager Support delect bt backplay tts"
+	depends on BT_MANAGER
+    default n
+    help
+    This option enables delect bt backplay tts.
+
+config USER_BT_CLEAR_LINKKEY
+    bool
+    prompt "bt manager Support BT clear linkkey"
+	depends on BT_MANAGER
+    default n
+    help
+    This option enables bt clear linkkey.
+
+config USER_KEY_ENTER_DUT_MODE
+    bool
+    prompt "bt manager Support BT key dut mode"
+	depends on BT_MANAGER
+    default n
+    help
+    This option enables bt key dut mode.
+
+config USER_LCMUSIC_BP_SAVE
+    bool
+    prompt "bt manager Support lcmusic bp save"
+	depends on BT_MANAGER
+    default n
+    help
+    This option enables lcmusic bp save
+
+config USER_VOLUME_SAVE
+    bool
+    prompt "bt manager Support BT volume save"
+	depends on BT_MANAGER
+    default n
+    help
+    This option enables bt volume save.
+
+config USER_ALL_MODE_VOLUME_PUBLIC
+    bool
+    prompt "bt manager Support all mode volume"
+	depends on BT_MANAGER
+    default n
+    help
+    This option enables all mode volume.
+
+config USER_LDO_INSIDE_MODE
+    bool
+    prompt "bt manager Support user inside LDO mode"
+	depends on BT_MANAGER
+    default n
+    help
+    This option enables user inside LDO mode

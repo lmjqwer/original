@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "nvram_config.h": "c",
+        "audio_device.h": "c",
+        "tts_manager.h": "c",
+        "host_interface.h": "c"
+    }
+}

@@ -1,0 +1,4 @@
+
+config BOARD_ATS2853c_DVB
+	bool "ATS2853c Develop Board"
+	depends on SOC_ATS2853
