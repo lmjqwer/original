@@ -92,18 +92,18 @@ static void system_app_view_deal(u32_t ui_event)
 		// seg_led_display_icon(SLED_PLAY, true);
 	#endif
 	#ifdef CONFIG_LED_MANAGER
-		led_manager_set_breath(0, NULL, OS_FOREVER, NULL);
-		led_manager_set_breath(1, NULL, OS_FOREVER, NULL);
+		// led_manager_set_breath(0, NULL, OS_FOREVER, NULL);
+		// led_manager_set_breath(1, NULL, OS_FOREVER, NULL);
 	#endif
 	break;
 	case UI_EVENT_PLAY_PAUSE:
 	#ifdef CONFIG_SEG_LED_MANAGER
-		seg_led_display_icon(SLED_PAUSE, true);
-		seg_led_display_icon(SLED_PLAY, false);
+		// seg_led_display_icon(SLED_PAUSE, true);
+		// seg_led_display_icon(SLED_PLAY, false);
 	#endif
 	#ifdef CONFIG_LED_MANAGER
-		led_manager_set_display(0, LED_ON, OS_FOREVER, NULL);
-		led_manager_set_display(1, LED_ON, OS_FOREVER, NULL);
+		// led_manager_set_display(0, LED_ON, OS_FOREVER, NULL);
+		// led_manager_set_display(1, LED_ON, OS_FOREVER, NULL);
 	#endif
 	break;
 	case UI_EVENT_POWER_OFF:
