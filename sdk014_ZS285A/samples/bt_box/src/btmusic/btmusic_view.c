@@ -64,12 +64,12 @@ static int _btmusic_view_proc(u8_t view_id, u8_t msg_id, u32_t msg_data)
 void btmusic_view_show_connected(void)
 {
 #ifdef CONFIG_SEG_LED_MANAGER
-	seg_led_manager_clear_screen(LED_CLEAR_ALL);
-	seg_led_display_string(SLED_NUMBER1, " bL ", true);
-	seg_led_display_icon(SLED_PAUSE, true);
+	// seg_led_manager_clear_screen(LED_CLEAR_ALL);
+	// seg_led_display_string(SLED_NUMBER1, " bL ", true);
+	// seg_led_display_icon(SLED_PAUSE, true);
 #ifdef CONFIG_TWS
 	if (bt_manager_tws_get_dev_role() == BTSRV_TWS_MASTER) {
-		seg_led_display_string(SLED_NUMBER1, "-", true);
+		// seg_led_display_string(SLED_NUMBER1, "-", true);
 	}
 #endif
 #endif
@@ -82,20 +82,20 @@ void btmusic_view_show_connected(void)
 void btmusic_view_show_disconnected(void)
 {
 #ifdef CONFIG_SEG_LED_MANAGER
-	seg_led_display_string(SLED_NUMBER2, "bL", true);
-	seg_led_display_string(SLED_NUMBER4, " ", false);
-	seg_led_display_set_flash(FLASH_2ITEM(SLED_NUMBER2, SLED_NUMBER3), 1000, FLASH_FOREVER, NULL);
-	seg_led_display_icon(SLED_PAUSE, false);
-	seg_led_display_icon(SLED_PLAY, false);
+	// seg_led_display_string(SLED_NUMBER2, "bL", true);
+	// seg_led_display_string(SLED_NUMBER4, " ", false);
+	// seg_led_display_set_flash(FLASH_2ITEM(SLED_NUMBER2, SLED_NUMBER3), 1000, FLASH_FOREVER, NULL);
+	// seg_led_display_icon(SLED_PAUSE, false);
+	// seg_led_display_icon(SLED_PLAY, false);
 #ifdef CONFIG_TWS
 	if (bt_manager_tws_get_dev_role() == BTSRV_TWS_MASTER) {
-		seg_led_display_string(SLED_NUMBER1, "-", true);
+		// seg_led_display_string(SLED_NUMBER1, "-", true);
 	}
 #endif
 #endif
 #ifdef CONFIG_LED_MANAGER
-	led_manager_set_blink(0, 200, 100, OS_FOREVER, LED_START_STATE_ON, NULL);
-	led_manager_set_blink(1, 200, 100, OS_FOREVER, LED_START_STATE_OFF, NULL);
+	// led_manager_set_blink(0, 200, 100, OS_FOREVER, LED_START_STATE_ON, NULL);
+	// led_manager_set_blink(1, 200, 100, OS_FOREVER, LED_START_STATE_OFF, NULL);
 #endif
 }
 
@@ -119,7 +119,7 @@ void btmusic_view_show_play_paused(bool playing)
 void btmusic_view_show_tws_connect(bool connect)
 {
 #ifdef CONFIG_SEG_LED_MANAGER
-	seg_led_display_string(SLED_NUMBER1, "-", connect);
+	// seg_led_display_string(SLED_NUMBER1, "-", connect);
 #endif
 }
 
@@ -171,12 +171,12 @@ void btmusic_view_init(void)
 
 	if (bt_manager_get_connected_dev_num() == 0) {
 	#ifdef CONFIG_SEG_LED_MANAGER
-		seg_led_display_string(SLED_NUMBER2, "bL", true);
-		seg_led_display_string(SLED_NUMBER4, " ", false);
-		seg_led_display_set_flash(FLASH_2ITEM(SLED_NUMBER2, SLED_NUMBER3), 1000, FLASH_FOREVER, NULL);
+		// seg_led_display_string(SLED_NUMBER2, "bL", true);
+		// seg_led_display_string(SLED_NUMBER4, " ", false);
+		// seg_led_display_set_flash(FLASH_2ITEM(SLED_NUMBER2, SLED_NUMBER3), 1000, FLASH_FOREVER, NULL);
 	#ifdef CONFIG_TWS
 		if (bt_manager_tws_get_dev_role() == BTSRV_TWS_MASTER) {
-			seg_led_display_string(SLED_NUMBER1, "-", true);
+			// seg_led_display_string(SLED_NUMBER1, "-", true);
 		}
 	#endif
 	#endif
@@ -186,11 +186,11 @@ void btmusic_view_init(void)
 	#endif
 	} else {
 	#ifdef CONFIG_SEG_LED_MANAGER
-		seg_led_display_string(SLED_NUMBER2, "bL", true);
-		seg_led_display_string(SLED_NUMBER4, " ", false);
+		// seg_led_display_string(SLED_NUMBER2, "bL", true);
+		// seg_led_display_string(SLED_NUMBER4, " ", false);
 	#ifdef CONFIG_TWS
 		if (bt_manager_tws_get_dev_role() == BTSRV_TWS_MASTER) {
-			seg_led_display_string(SLED_NUMBER1, "-", true);
+			// seg_led_display_string(SLED_NUMBER1, "-", true);
 		}
 	#endif
 		seg_led_display_icon(SLED_PAUSE, true);

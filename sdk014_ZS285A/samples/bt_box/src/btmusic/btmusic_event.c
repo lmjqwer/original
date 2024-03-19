@@ -13,14 +13,23 @@
 #include <esd_manager.h>
 #include "tts_manager.h"
 static bool avrcp_connected = false;
-
+int flash_num =0;
 void bt_music_tts_delay_resume(struct thread_timer *ttimer, void *expiry_fn_arg)
 {
 	struct btmusic_app_t *btmusic = (struct btmusic_app_t *)btmusic_get_app();
 	btmusic->need_resume_play = 0;
 	bt_manager_a2dp_check_state();
 }
-
+void seg_show_number(void)
+{
+#ifdef CONFIG_SEG_LED_MANAGER
+	u8_t freq_num[5] = {0};
+	snprintf(freq_num, sizeof(freq_num), "%03u", flash_num);
+	printk("flash_num =%d,29 show str1 is %s\n",flash_num,freq_num);
+	
+	seg_led_display_string(SLED_NUMBER2, freq_num, true);
+#endif
+}
 void btmusic_bt_event_proc(struct app_msg *msg)
 {
 	struct btmusic_app_t *btmusic = (struct btmusic_app_t *)btmusic_get_app();
@@ -188,7 +197,13 @@ void btmusic_input_event_proc(struct app_msg *msg)
 
 	case MSG_BT_PLAY_VOLUP:
 	{
-		system_volume_up(AUDIO_STREAM_MUSIC, 1);
+		// system_volume_up(AUDIO_STREAM_MUSIC, 1);
+#ifdef CONFIG_SEG_LED_MANAGER
+	seg_led_manager_clear_screen(LED_CLEAR_ALL);
+	seg_led_display_string(SLED_NUMBER1, "1888", true);
+	// seg_led_display_icon(SLED_PAUSE, true);
+#endif
+
 		break;
 	}
 
