@@ -185,7 +185,7 @@ void btmusic_input_event_proc(struct app_msg *msg)
 
 	case MSG_BT_PLAY_NEXT:
 	{
-		bt_manager_avrcp_play_next();
+		// bt_manager_avrcp_play_next();
 		break;
 	}
 
