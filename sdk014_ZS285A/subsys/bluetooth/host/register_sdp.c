@@ -702,7 +702,7 @@ void bt_register_avrcp_ct_sdp(void)
 	avrcp_controller_rec.attr_count = ARRAY_SIZE(avrcp_controller_attrs);
 	bt_sdp_register_service(&avrcp_controller_rec);
 }
-
+/*给链表节点赋予属性的数量和属性数组的地址*/
 void bt_register_avrcp_tg_sdp(void)
 {
 	memset(&avrcp_target_rec, 0, sizeof(avrcp_target_rec));

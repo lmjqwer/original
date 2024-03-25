@@ -1192,7 +1192,7 @@ u8_t hostif_bt_map_client_connect(struct bt_conn *conn,char *path,struct bt_map_
 #ifdef CONFIG_BT_MAP_CLIENT
 	u8_t user_id;
 	int prio;
-
+    printk(" 1195 hostif_bt_map_client_connect \n");
 	prio = hostif_set_negative_prio();
 	user_id = bt_map_client_connect(conn,path,cb);
 	hostif_revert_prio(prio);
@@ -1208,7 +1208,7 @@ u8_t hostif_bt_map_client_get_message(struct bt_conn *conn, char *path, struct b
 #ifdef CONFIG_BT_MAP_CLIENT
 	u8_t user_id;
 	int prio;
-
+    printk("====== 1211 hostif_bt_map_client_get_message \n");
 	prio = hostif_set_negative_prio();
 	user_id = bt_map_client_get_message(conn, path, cb);
 	hostif_revert_prio(prio);
@@ -1223,7 +1223,7 @@ int hostif_bt_map_client_abort_get(struct bt_conn *conn, u8_t user_id)
 {
 #ifdef CONFIG_BT_MAP_CLIENT
 	int prio, ret;
-
+ 	printk(" ======1226 hostif_bt_map_client_abort_get \n");
 	prio = hostif_set_negative_prio();
 	ret = bt_map_client_abort_get(conn, user_id);
 	hostif_revert_prio(prio);
@@ -1238,7 +1238,7 @@ int hostif_bt_map_client_disconnect(struct bt_conn *conn, u8_t user_id)
 {
 #ifdef CONFIG_BT_MAP_CLIENT
 	int prio, ret;
-
+ 	printk("====== 1241 hostif_bt_map_client_disconnect \n");
 	prio = hostif_set_negative_prio();
 	ret = bt_map_client_disconnect(conn, user_id);
 	hostif_revert_prio(prio);
@@ -1253,7 +1253,7 @@ int hostif_bt_map_client_set_folder(struct bt_conn *conn, u8_t user_id,char *pat
 {
 #ifdef CONFIG_BT_MAP_CLIENT
 	int prio, ret;
-
+ 	printk("====== 1226 hostif_bt_map_client_abort_get \n");
 	prio = hostif_set_negative_prio();
 	ret = bt_map_client_set_folder(conn, user_id,path,flags);
 	hostif_revert_prio(prio);
@@ -1268,11 +1268,10 @@ int hostif_bt_map_client_get_folder_listing(struct bt_conn *conn, u8_t user_id)
 {
 #ifdef CONFIG_BT_MAP_CLIENT
 	int prio, ret;
-
 	prio = hostif_set_negative_prio();
 	ret = bt_map_client_get_folder_listing(conn, user_id);
 	hostif_revert_prio(prio);
-
+ 	printk(" 1274 hostif_bt_map_client_get_folder_listing \n");
 	return ret;
 #else
 	return -EIO;
@@ -1288,7 +1287,7 @@ int hostif_bt_map_client_get_messages_listing(struct bt_conn *conn, u8_t user_id
 	prio = hostif_set_negative_prio();
 	ret = bt_map_client_get_messages_listing(conn, user_id,max_list_count,parameter_mask);
 	hostif_revert_prio(prio);
-
+ 	printk(" 1291 hostif_bt_map_client_get_messages_listing \n");
 	return ret;
 #else
 	return -EIO;
@@ -1299,7 +1298,7 @@ int hostif_bt_hid_register_sdp(struct bt_sdp_attribute * hid_attrs,int attrs_siz
 {
 #ifdef CONFIG_BT_HID
 	int prio, ret;
-
+    printk(" 1302 hostif_bt_hid_register_sdp \n");
 	prio = hostif_set_negative_prio();
 	ret = bt_hid_register_sdp(hid_attrs, attrs_size);
 	hostif_revert_prio(prio);

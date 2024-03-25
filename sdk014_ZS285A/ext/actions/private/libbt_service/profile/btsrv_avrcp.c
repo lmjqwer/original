@@ -273,15 +273,15 @@ static void btsrv_avrcp_ctrl_pass_timer_handler(struct thread_timer *ttimer, voi
 		btsrv_avrcp_ctrl_pass_timer_start_stop(false);
 	}
 }
-
+/*监控调整音量的定时器，通过连接的蓝牙获取音量*/
 static void btsrv_avrcp_sync_volume_timer_handler(struct thread_timer *ttimer, void *expiry_fn_arg)
 {
 	u8_t volume;
 	struct bt_conn *avrcp_conn = btsrv_rdm_a2dp_get_actived();
-
+    printk("enter timer\n");
 	avrcp_user_callback->get_volume_cb(avrcp_conn, &volume);
 	SYS_LOG_INF("conn %p, volume %d\n", avrcp_conn, volume);
-
+    printk("conn %p, volume %d\n", avrcp_conn, volume);
 	if (!btsrv_is_pts_test()) {
 		hostif_bt_avrcp_tg_notify_change(avrcp_conn, volume);
 	}

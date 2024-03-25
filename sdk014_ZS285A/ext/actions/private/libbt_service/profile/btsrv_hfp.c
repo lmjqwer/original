@@ -879,7 +879,7 @@ static int _btsrv_hfp_hf_dial_memory(int location)
 
 	return 0;
 }
-
+/*发送指令控制音量*/
 static int _btsrv_hfp_hf_volume_control(u8_t type, u8_t volume)
 {
 	char at_command[32];
@@ -893,7 +893,8 @@ static int _btsrv_hfp_hf_volume_control(u8_t type, u8_t volume)
 	} else {
 		snprintf(at_command, sizeof(at_command), "AT+VGM=%u\r", volume);
 	}
-
+    
+	printk("volume = %d,at_command =%s\n",volume,at_command);
 	hostif_bt_hfp_hf_send_cmd(br_conn, BT_HFP_USER_AT_CMD, at_command);
 
 	return 0;

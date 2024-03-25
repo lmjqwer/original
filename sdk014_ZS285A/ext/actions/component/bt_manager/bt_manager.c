@@ -229,6 +229,7 @@ static void bt_mgr_notify_connected(struct bt_mgr_dev_info *info)
 	} else {
 		SYS_LOG_INF("bt map time connected:%s failed\n", (char *)info->name);
 	}
+	printk(" 232 bt map time connected:%s failed\n", (char *)info->name);
 #endif
 }
 

@@ -1483,7 +1483,7 @@ void bt_sdp_init(void)
 	bt_register_hfp_ag_sdp();
 #endif
 }
-
+/*注册sdp服务，更新服务句柄和属性信息*/
 int bt_sdp_register_service(struct bt_sdp_record *service)
 {
 	u32_t handle = SDP_SERVICE_HANDLE_BASE;

@@ -132,7 +132,7 @@ const u8_t avrcp_abs_vol[32] = {
     0x63,0x67,0x6b,0x6f,0x73,0x77,0x7b,0x7f,
 };
 #endif
-
+/*将music 音量按条件转化为 avrcp音量*/
 #if (defined CONFIG_VOLUEM_MANAGER) || (defined CONFIG_BT_AVRCP_VOL_SYNC)
 static u32_t _bt_manager_music_to_avrcp_volume(u32_t music_vol)
 {
@@ -309,7 +309,7 @@ int bt_manager_avrcp_fast_backward(bool start)
 	}
 	return 0;
 }
-
+/*通过定时器不断通过蓝牙连接信息结构体获取手机音量，并发送消息*/
 int bt_manager_avrcp_sync_vol_to_remote(u32_t music_vol)
 {
 #ifdef CONFIG_BT_AVRCP_VOL_SYNC
