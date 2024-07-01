@@ -199,14 +199,14 @@ void main_msg_proc(void *parama1, void *parama2, void *parama3)
 
 	thread_timer_handle_expired();
 }
-
+/* enter main*/
 void main(void)
 {
 	bool play_welcome = true;
 	bool init_bt_manager = true;
 	u16_t reboot_type = 0;
 	u8_t reason = 0;
-
+    111
 	system_power_get_reboot_reason(&reboot_type, &reason);
 
 #ifdef CONFIG_FIRMWARE_VERSION
